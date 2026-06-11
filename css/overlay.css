@@ -1,0 +1,77 @@
+#overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#overlay.is-open {
+  pointer-events: all;
+  opacity: 1;
+}
+
+#overlay-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+#overlay-audio-wrap {
+  display: none !important;
+}
+
+#overlay-panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, calc(100vw - 2rem));
+  max-height: calc(100vh - 3rem);
+  background: rgba(12, 12, 12, 0.98);
+  color: #e5e5e5;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 60px rgba(0, 0, 0, 0.55);
+  transform: translateY(-60px);
+}
+
+#overlay-panel .xp-titlebar,
+#overlay-panel .xp-client,
+#overlay-panel .xp-statusbar,
+#overlay-panel .xp-inset,
+#overlay-panel .xp-fieldset,
+#overlay-panel .xp-text-panel,
+#overlay-panel .xp-image-frame,
+#overlay-panel .xp-caption,
+#overlay-panel .xp-status-panel,
+#overlay-panel .xp-titlebar-text,
+#overlay-panel legend {
+  background: #121212 !important;
+  color: #ddd !important;
+  border-color: #444 !important;
+}
+
+#overlay-panel img {
+  filter: grayscale(100%) contrast(1.02) brightness(0.95);
+}
+
+#overlay-panel .xp-btn-close {
+  background: #c20 !important;
+  border-color: #800 !important;
+  color: #fff !important;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+#overlay-panel .xp-btn-close:hover {
+  background: #e30 !important;
+}
+
+#overlay-panel .xp-btn-close:active {
+  background: #a00 !important;
+}
+
+.overlay-section-hidden {
+  display: none !important;
+}

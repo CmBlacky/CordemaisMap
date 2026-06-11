@@ -1,0 +1,86 @@
+#map {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--bg);
+}
+
+/* Vignette légère — carte gris foncé lisible */
+#map::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 350;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 85% 75% at 50% 50%,
+      transparent 0%,
+      rgba(8, 8, 10, 0.18) 65%,
+      rgba(4, 4, 6, 0.38) 100%
+    );
+}
+
+.leaflet-threads-pane {
+  z-index: 450 !important;
+  pointer-events: none;
+}
+
+.threads-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.thread-path {
+  fill: none;
+  stroke: var(--thread);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  opacity: 1;
+}
+
+.thread-path.thread-new {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: thread-draw 1.4s cubic-bezier(0.35, 0, 0.2, 1) forwards;
+}
+
+@keyframes thread-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.leaflet-control-attribution {
+  background: rgba(10, 12, 15, 0.75) !important;
+  color: rgba(232, 226, 217, 0.35) !important;
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.55rem !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--accent) !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid var(--border) !important;
+  border-radius: 2px !important;
+  overflow: hidden;
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--text-secondary) !important;
+  border-bottom: 1px solid var(--border) !important;
+  font-family: 'Space Mono', monospace !important;
+  transition: color var(--transition), background var(--transition);
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--accent-dim) !important;
+  color: var(--accent) !important;
+}

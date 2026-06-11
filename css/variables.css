@@ -1,0 +1,12 @@
+:root {
+  --bg:             #0a0c0f;
+  --surface:        #11151a;
+  --border:         rgba(255, 255, 255, 0.08);
+  --text-primary:   #e8e2d9;
+  --text-secondary: rgba(232, 226, 217, 0.55);
+  --accent:         #c8a96e;
+  --accent-dim:     rgba(200, 169, 110, 0.18);
+  --thread:         #9f1239;
+  --overlay-bg:     rgba(10, 12, 15, 0.97);
+  --transition:     0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
